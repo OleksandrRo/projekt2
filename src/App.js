@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { AppContainer, AppTitel, AppImage } from "./App.styled"
+import flight from "./assets/flight.jpg"
+import { Button } from './Button';
+import { Menu } from './Menu';
+import { Ingredients } from './Ingredients';
 
-function App() {
+
+const App = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const openMenu = () => {
+
+    setIsVisible(!isVisible);
+  };
+
+
+  const closeMenu = (e) =>{
+
+    if( e.pageX < window.innerWidth - 200)
+    setIsVisible(false)
+    console.log(e.pageX)
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AppContainer onClick={closeMenu}>
+        <AppImage src={flight} width="100px" margin="left" />
+        <AppTitel color='white'>FLYING HOLIDAYS PLANER</AppTitel>
+        <Menu isVisible={isVisible} />
+        <Button openMenu={openMenu}>Menu</Button>
+      </AppContainer>
+      <Ingredients/>
+
+    </>
   );
-}
+};
+
+
 
 export default App;
