@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import './App.css';
 import { AppContainer, AppTitel, AppImage } from "./App.styled"
-import flight from "./assets/flight.jpg"
-import { Button } from './Button';
+import fridge from "./assets/fridge.png"
+import loader from "./assets/loader.gif"
+import { ButtonMenu } from './ButtonMenu';
 import { Menu } from './Menu';
-import { Ingredients } from './Ingredients';
+import { SearchIngredients } from './search/SearchIngridients';
 
 
 const App = () => {
@@ -15,25 +16,25 @@ const App = () => {
   };
 
 
-  const closeMenu = (e) =>{
+  const closeMenu = (e) => {
 
-    if( e.pageX < window.innerWidth - 200)
-    setIsVisible(false)
+    if (e.pageX < window.innerWidth - 200)
+      setIsVisible(false)
     console.log(e.pageX)
 
   }
 
   return (
-    <>
-      <AppContainer onClick={closeMenu}>
-        <AppImage src={flight} width="100px" margin="left" />
-        <AppTitel color='white'>FLYING HOLIDAYS PLANER</AppTitel>
+    <div onClick={closeMenu}>
+      <AppContainer >
+        <AppImage src={fridge} width="100px" margin="left" />
+        <AppTitel color='white'>What's cooking, good looking?</AppTitel>
         <Menu isVisible={isVisible} />
-        <Button openMenu={openMenu}>Menu</Button>
+        <ButtonMenu openMenu={openMenu}>Menu</ButtonMenu>
       </AppContainer>
-      <Ingredients/>
+      <SearchIngredients img={loader} />
 
-    </>
+    </div>
   );
 };
 
