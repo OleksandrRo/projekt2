@@ -1,7 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import { DIET, HEALTH, MEALTYPE, DISHTYPE, COOKINGTIME } from "./Constans.js";
-import { Choise } from "./Choise.mjs";
+import { DIET, HEALTH, MEALTYPE, DISHTYPE, COOKINGTIME } from "./Constans.jsx";
+import { Form } from "./Form.jsx";
+import { Results } from "../result/Results.jsx";
+import { SendReq } from "./Sendreq.jsx";
+
 
 
 export const SearchIngredients = (props) => {
@@ -42,53 +45,11 @@ export const SearchIngredients = (props) => {
 
     return (
         <>
-            <form>
-                    <input
-                    type="text"
-                    value={ingredient}
-                    onChange={(e) => setIngredient(e.target.value)}
-                    placeholder="Your ingredients..." />
-                    <br />
-                    <button type="button" onClick={addIngredient}>Add</button>
-                    <br />
-                    <Choise name="diet" changeValue={setDiet}
-                        aray={DIET} />
-                    <br />
-                    <Choise name="health" changeValue={setHealth}
-                        aray={HEALTH} />
-                    <br />
-                    <Choise name="mealType" changeValue={setMealType}
-                        aray={MEALTYPE} />
-                    <br />
-                    <Choise name="dishType" changeValue={setDishType}
-                        aray={DISHTYPE} />
-                    <br />
-                    <Choise name="cookingTime" changeValue={setCookingTime}
-                        aray={COOKINGTIME} />
+            <Form addIngredient={addIngredient} ingredient={ingredient} setIngredient={setIngredient} setDiet={setDiet} setHealth={setHealth} setMealType={setMealType} setDishType={setDishType} setCookingTime={setCookingTime} DIET={DIET} HEALTH={HEALTH} MEALTYPE={MEALTYPE} DISHTYPE={DISHTYPE} COOKINGTIME={COOKINGTIME} />
 
-            </form>
+           <SendReq allList={allList} newData={newData} />
 
-
-
-            {allList.length > 0 && <button type="button" onClick={newData}>sent reques</button>}
-
-
-
-
-            <div className="List">
-                <p>list of your ingredients</p>
-                {allList.map(e => <span> {e} </span>)}
-                {loading ? <img src={props.img} /> : <ul>
-                    {recipes.length === 0 ? <div>Not found</div> : recipes.map(e =>
-                        <li>
-                            <h3>{e.recipe.label} </h3>
-                            <img src={e.recipe.image} />
-                            <br />
-                            {e.recipe.ingredientLines}
-                            {e.recipe.cuisineType}
-                        </li>)}
-                </ul>}
-            </div>
+            <Results loading={loading} recipes={recipes} allList={allList}  />
         </>
     )
 };

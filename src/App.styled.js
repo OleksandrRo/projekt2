@@ -52,6 +52,23 @@ color: white;
 margin: 3vw;
 `;
 
+export const SelectStyled = styled.select`
+width: auto;
+`;
 
+export const FormStyled = styled.form`
+width: auto;
+`;
 
+export const InputStyled = styled.input`
+width: auto;
+`;
+
+export const ResultsStyled = styled.div`
+width: auto;
+`;
+
+export const SendReqStyled = styled.div`
+width: auto;
+`;
 // @media (min-width: 300px) and (max-width: 575px)
