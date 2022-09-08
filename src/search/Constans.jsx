@@ -1,5 +1,5 @@
 export const DIET = [
-    { name: "---", value: "", id:0 },
+    { name: "---", value: "", id: 0 },
     { name: "balanced", value: "balanced", id: 1 },
     { name: "high-fiber", value: "high-fiber", id: 2 },
     { name: "high-protein", value: "high-protein", id: 3 },
@@ -9,19 +9,19 @@ export const DIET = [
 ];
 
 export const HEALTH = [
-    { name: "---", value: "", id:7 },
+    { name: "---", value: "", id: 7 },
     { name: "alcohol-cocktail", value: "alcohol-cocktail", id: 8 },
     { name: "alcohol-free", value: "alcohol-free", id: 9 },
     { name: "celery-free", value: "celery-free", id: 10 },
     { name: "crustacean-free", value: "crustacean-free", id: 11 },
     { name: "dairy-free", value: "dairy-free", id: 12 },
     { name: "DASH", value: "DASH", id: 13 },
-    { name: "egg-free", value: "egg-free" , id: 14 },
-    { name: "fish-free", value: "fish-free" , id: 15 },
+    { name: "egg-free", value: "egg-free", id: 14 },
+    { name: "fish-free", value: "fish-free", id: 15 },
     { name: "fodmap-free", value: "fodmap-free", id: 16 },
     { name: "gluten-free", value: "gluten-free", id: 17 },
     { name: "immuno-supportive", value: "immuno-supportive", id: 18 },
-    { name: "keto-friendly", value: "keto-friendly" , id: 19},
+    { name: "keto-friendly", value: "keto-friendly", id: 19 },
     { name: "kidney-friendly", value: "kidney-friendly", id: 20 },
     { name: "kosher", value: "kosher", id: 21 },
     { name: "low-fat-abs", value: "low-fat-abs", id: 22 },
@@ -33,7 +33,7 @@ export const HEALTH = [
     { name: "mustard-free", value: "mustard-free", id: 28 },
     { name: "no-oil-added", value: "no-oil-added", id: 29 },
     { name: "paleo", value: "paleo", id: 30 },
-    { name: "peanut-free", value: "peanut-free", id: 31},
+    { name: "peanut-free", value: "peanut-free", id: 31 },
     { name: "pescatarian", value: "pescatarian", id: 32 },
     { name: "pork-free", value: "pork-free", id: 33 },
     { name: "red-meat-free", value: "red-meat-free", id: 34 },
@@ -62,7 +62,7 @@ export const MEALTYPE = [
 export const DISHTYPE = [
     { name: "---", value: "", id: 51 },
     { name: "Biscuits and cookies", value: "Biscuits and cookies", id: 52 },
-    { name: "Bread", value: "Bread" , id: 53 },
+    { name: "Bread", value: "Bread", id: 53 },
     { name: "Cereals", value: "Cereals", id: 54 },
     { name: "Condiments and sauces", value: "Condiments and sauces", id: 55 },
     { name: "Desserts", value: "Desserts", id: 56 },
@@ -77,7 +77,7 @@ export const DISHTYPE = [
     { name: "Soup", value: "Soup", id: 65 },
     { name: "Starter", value: "Starter", id: 66 },
     { name: "Sweets", value: "Sweets", id: 67 },
-    
+
 ];
 
 export const COOKINGTIME = [

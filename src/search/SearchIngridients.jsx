@@ -7,7 +7,7 @@ import { SendReq } from "./Sendreq.jsx";
 
 
 
-export const SearchIngredients = (props) => {
+export const SearchIngredients = () => {
 
     const [ingredient, setIngredient] = useState("")
     const [recipes, setRecipes] = useState([])
@@ -18,8 +18,6 @@ export const SearchIngredients = (props) => {
     const [dishType, setDishType] = useState("")
     const [cookingTime, setCookingTime] = useState("")
     const [loading, setLoading] = useState(false)
-
-
 
     const addIngredient = () => {
         setAllList([...allList, ingredient])
@@ -38,18 +36,13 @@ export const SearchIngredients = (props) => {
         setAllList([])
     };
 
-
-
-
-
-
     return (
         <>
             <Form addIngredient={addIngredient} ingredient={ingredient} setIngredient={setIngredient} setDiet={setDiet} setHealth={setHealth} setMealType={setMealType} setDishType={setDishType} setCookingTime={setCookingTime} DIET={DIET} HEALTH={HEALTH} MEALTYPE={MEALTYPE} DISHTYPE={DISHTYPE} COOKINGTIME={COOKINGTIME} />
 
-           <SendReq allList={allList} newData={newData} />
+            <SendReq allList={allList} newData={newData} setAllList={setAllList}/>
 
-            <Results loading={loading} recipes={recipes} allList={allList}  />
+            <Results loading={loading} recipes={recipes} allList={allList} />
         </>
     )
 };

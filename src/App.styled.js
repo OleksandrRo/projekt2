@@ -71,4 +71,24 @@ width: auto;
 export const SendReqStyled = styled.div`
 width: auto;
 `;
+
+export const ResultsParStyled = styled.p`
+width: auto;
+`;
+
+export const ResultsUlStyled = styled.ul`
+width: auto;
+`;
+
+export const ResultsLiStyled = styled.li`
+width: auto;
+`;
+
+export const ResultsNFStyled = styled.div`
+width: auto;
+`;
+
+export const ButtonFormStyled = styled.button`
+width: auto;
+`;
 // @media (min-width: 300px) and (max-width: 575px)
