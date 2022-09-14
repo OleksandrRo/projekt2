@@ -1,4 +1,4 @@
-import {ListMenuStyled} from "./App.styled"
+import {ListMenuStyled} from "../App.styled"
 
 export const ListMenu = () =>{
     return( 

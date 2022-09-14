@@ -1,4 +1,4 @@
-import {MenuStyled} from "./App.styled"
+import {MenuStyled} from "../App.styled"
 import { ListMenu } from "./ListMenu";
 
 

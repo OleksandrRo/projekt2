@@ -4,10 +4,11 @@ import { DIET, HEALTH, MEALTYPE, DISHTYPE, COOKINGTIME } from "./Constans.jsx";
 import { Form } from "./Form.jsx";
 import { Results } from "../result/Results.jsx";
 import { SendReq } from "./Sendreq.jsx";
+import { MainStyled } from "../App.styled.js";
 
 
 
-export const SearchIngredients = () => {
+export const SearchIngredients = (props) => {
 
     const [ingredient, setIngredient] = useState("")
     const [recipes, setRecipes] = useState([])
@@ -20,8 +21,11 @@ export const SearchIngredients = () => {
     const [loading, setLoading] = useState(false)
 
     const addIngredient = () => {
-        setAllList([...allList, ingredient])
-        setIngredient("")
+        if ( ingredient.trim().length > 0) {
+            setAllList([...allList, ingredient])
+            setIngredient("")
+        }
+        
     };
 
     const newData = async () => {
@@ -37,13 +41,11 @@ export const SearchIngredients = () => {
     };
 
     return (
-        <>
+        <MainStyled>
             <Form addIngredient={addIngredient} ingredient={ingredient} setIngredient={setIngredient} setDiet={setDiet} setHealth={setHealth} setMealType={setMealType} setDishType={setDishType} setCookingTime={setCookingTime} DIET={DIET} HEALTH={HEALTH} MEALTYPE={MEALTYPE} DISHTYPE={DISHTYPE} COOKINGTIME={COOKINGTIME} />
-
-            <SendReq allList={allList} newData={newData} setAllList={setAllList}/>
-
-            <Results loading={loading} recipes={recipes} allList={allList} />
-        </>
+            <SendReq allList={allList} newData={newData} setAllList={setAllList} />
+            <Results loading={loading} recipes={recipes} allList={allList} img={props.img} />
+        </MainStyled>
     )
 };
 

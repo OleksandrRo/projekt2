@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import { AppContainer, AppTitel, AppImage } from "./App.styled"
-import fridge from "./assets/fridge.png"
+import { AppContainer } from "./App.styled"
+import { Header } from './header/Header';
 import loader from "./assets/loader.gif"
-import { ButtonMenu } from './ButtonMenu';
-import { Menu } from './Menu';
 import { SearchIngredients } from './search/SearchIngridients';
 
 
@@ -27,13 +25,9 @@ const App = () => {
   return (
     <div onClick={closeMenu}>
       <AppContainer >
-        <AppImage src={fridge} width="100px" margin="left" />
-        <AppTitel color='white'>What's cooking, good looking?</AppTitel>
-        <Menu isVisible={isVisible} />
-        <ButtonMenu openMenu={openMenu}>Menu</ButtonMenu>
+      <Header isVisible={isVisible} openMenu={openMenu} />
       </AppContainer>
       <SearchIngredients img={loader} />
-
     </div>
   );
 };
