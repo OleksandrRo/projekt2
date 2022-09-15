@@ -1,8 +1,9 @@
 import { useState } from "react"
 import {ListMenuStyled} from "../App.styled"
-import { Choise } from "../search/Choise"
+import { Choise } from "../filter/Choise"
 import { DIET, HEALTH, MEALTYPE, DISHTYPE, COOKINGTIME } from "../search/Constans"
-import { Checkbox } from "../search/Checkbox"
+import { Checkbox } from "../filter/Checkbox"
+import { Range } from "../filter/Range"
 
 export const ListMenu = (props) =>{
     const [diet, setDiet] = useState("")
@@ -27,6 +28,8 @@ export const ListMenu = (props) =>{
                 aray={DISHTYPE} />
             <Choise name="cookingTime" changeValue={setCookingTime}
                 aray={COOKINGTIME} />
+            <Range type="range" min="1" max="100"/>
+
      </ListMenuStyled>
     
 }

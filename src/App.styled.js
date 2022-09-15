@@ -65,7 +65,7 @@ width: 15vw;
 height: 100vh;
 background: #404040;
 visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
-transition: all 0.5s ease-in;
+transition: all 0.5s ease-in-out;
 
 @media (min-width: 300px) and (max-width: 575px) {
 
@@ -83,11 +83,11 @@ text-align: center;
 `;
 
 export const SelectStyled = styled.select`
-width: 11vw;
+width: 10vw;
 height: 4vh;
 position: relative;
 top: 1vw;
-left: -1.5vw;
+left: -1vw;
 margin: 1vh;
 
 @media (min-width: 300px) and (max-width: 575px) {
@@ -125,7 +125,15 @@ align-items: center;
 background: #000;
 `;
 
+export const RangeStyled = styled.input`
 
+position: relative;
+left: -0.7vw;
+top: 4vh;
+width: 10vw;
+
+
+`;
 
 
 
