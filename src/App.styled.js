@@ -3,26 +3,8 @@ import styled from '@emotion/styled'
 
 // ** Header folder
 
-
 export const ButtonStyled = styled.button`
 background: #000;
-
-
-// top: 0;
-// right: 0;
-// color: white;
-// cursor: pointer;
-// width: 0vw;
-// height: 0vh;
-// border: 1px solid #FF6F61;
-
-
-
-// &:hover {
-  
-//   box-shadow: #fff 0px 0px 10px 4px;
-//   box-sizing: border-box;
-// }
 `;
 
 export const BurgerImg = styled.img`
@@ -40,27 +22,55 @@ border-radius: 5px;
   
 }
 
+@media (min-width: 300px) and (max-width: 575px) {
+position: absolute;
+top: 5.5vw;
+right: 2vw;
+width: 15vw;
+height: 15vw;
+  }
+
+
 `;
 export const AppTitel = styled.h1`
-color: ${({color}) => color};
+color: ${({ color }) => color};
+br {
+  display: none;
+}
+
+@media (min-width: 300px) and (max-width: 575px) {
+  text-align: center;
+  font-size: 20px;
+  line-height: 4vh;
+  margin-right: 13vw;
+
+  br {
+    display: initial;
+  }
+}
 
 
 `;
 
 export const AppImage = styled.img`
-width: ${({ width}) => width};
+width: ${({ width }) => width};
 
 `;
 
 export const MenuStyled = styled.div`
 position: absolute;
 top: 100px;
-right: ${({isVisible}) => (isVisible ? "0" : "-40vw")};
+right: ${({ isVisible }) => (isVisible ? "0" : "-40vw")};
 width: 15vw;
 height: 100vh;
 background: #404040;
-visibility: ${({isVisible}) => (isVisible ? "visible" : "hidden")};
+visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
 transition: all 0.5s ease-in;
+
+@media (min-width: 300px) and (max-width: 575px) {
+
+  width: 50vw;
+ }
 `;
 
 export const ListMenuStyled = styled.div`
@@ -97,6 +107,9 @@ background: #000;
 `;
 
 
+
+
+
 // ** Result folder 
 
 export const ResultsAllStyled = styled.div`
@@ -107,8 +120,8 @@ flex-wrap: wrap;
 display: flex;
 justify-content: center;
 margin-top: 10vh;
-// position: relative;
-// top: 4vw;
+
+
 
 `;
 
@@ -118,6 +131,14 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 
+
+@media (min-width: 300px) and (max-width: 575px) {
+  
+  margin-left: 20px;
+  display: grid;
+  column-gap: 10px;
+    
+  }
 
 `;
 
@@ -132,6 +153,14 @@ export const ImgStyled = styled.img`
 border: 5px solid #FF6F61;
 border-radius: 4px;
 
+@media (min-width: 300px) and (max-width: 575px) {
+
+  border: 2px solid #FF6F61;
+  width: 70%;
+  height: auto;
+  
+  
+}
 `;
 
 export const ResultContainer = styled.div`
@@ -146,17 +175,42 @@ border-radius: 4px;
   
   box-shadow: rgb(255, 255, 255, 0.5) 0px 0px 5px 4px;
   box-sizing: border-box;
-  
+  cursor: pointer;
 }
 
+@media (min-width: 300px) and (max-width: 575px) {
 
+ width: 90%;
+ height: auto;
+ 
+ flex-wrap: wrap;
+}
+`;
+
+export const TextContainer = styled.div`
+height: 8vh;
+
+@media (min-width: 300px) and (max-width: 575px) {
+  margin-bottom: 5px;
+  height: 5vh;
+ }
+`;
+export const TextResultStyled = styled.h3`
+
+
+@media (min-width: 300px) and (max-width: 575px) {
+
+  width: auto;
+  font-size: 17px;
+  line-height: 20px;
+}
 `;
 
 
 
 
-// ** Search folder
 
+// ** Search folder
 
 export const FormStyled = styled.form`
 width: auto;
@@ -213,6 +267,9 @@ color: white;
 position: relative;
 top: 1.2vw;
 
+@media (min-width: 300px) and (max-width: 575px) {
+ margin-left: 13vw;
+}
 
 `;
 
@@ -275,13 +332,22 @@ export const ButtonSentReqStyled = styled.button`
   }
 `;
 
+
 export const ItemsTextStyled = styled.div`
 width: auto;
 background: #121212;
 display: flex;
 justify-content: center;
-// position: absolute;
-// top: 50vh;
+
+
+@media (min-width: 300px) and (max-width: 575px) {
+  margin-top: 5vh;
+  
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
 `;
 
 
@@ -289,7 +355,10 @@ export const ItemsStyled = styled.div`
 width: auto;
 background: #121212;
 
+
+
 `;
+
 
 
 
@@ -306,4 +375,3 @@ overflow: hidden;
 `;
 
 
-// @media (min-width: 300px) and (max-width: 575px)
