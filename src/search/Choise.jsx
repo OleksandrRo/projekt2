@@ -1,6 +1,6 @@
 import { SelectStyled } from "../App.styled"
-export const Choise = (props) => {
 
+export const Choise = (props) => {
     return (
         <SelectStyled name={props.name} onChange={(e) => props.changeValue(e.target.value)}>
             {props.aray.map((e) => (

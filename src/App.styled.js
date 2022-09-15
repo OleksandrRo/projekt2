@@ -5,21 +5,42 @@ import styled from '@emotion/styled'
 
 
 export const ButtonStyled = styled.button`
-background: url(./src/assets/hmbg.png);
-top: 0;
-right: 0;
-color: white;
-cursor: pointer;
-border: 2px solid white;
+background: #000;
 
+
+// top: 0;
+// right: 0;
+// color: white;
+// cursor: pointer;
+// width: 0vw;
+// height: 0vh;
+// border: 1px solid #FF6F61;
+
+
+
+// &:hover {
+  
+//   box-shadow: #fff 0px 0px 10px 4px;
+//   box-sizing: border-box;
+// }
+`;
+
+export const BurgerImg = styled.img`
+width: 4vw;
+height: 4vw;
+position: absolute;
+top: 1.5vw;
+right: 2vw;
+border-radius: 5px;
 
 &:hover {
   
-   box-sizing: border-box;
-   background: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  box-shadow: rgb(255, 255, 255, 0.5) 0px 0px 10px 4px;
+  box-sizing: border-box;
+  
 }
-`;
 
+`;
 export const AppTitel = styled.h1`
 color: ${({color}) => color};
 
@@ -34,17 +55,34 @@ width: ${({ width}) => width};
 export const MenuStyled = styled.div`
 position: absolute;
 top: 100px;
-right: ${({isVisible}) => (isVisible ? "0" : "-20vw")};
-width: 20vw;
+right: ${({isVisible}) => (isVisible ? "0" : "-40vw")};
+width: 15vw;
 height: 100vh;
 background: #404040;
 visibility: ${({isVisible}) => (isVisible ? "visible" : "hidden")};
 transition: all 0.5s ease-in;
 `;
 
-export const ListMenuStyled = styled.h3`
+export const ListMenuStyled = styled.div`
 color: white;
 margin: 3vw;
+
+`;
+
+export const SelectStyled = styled.select`
+width: 10vw;
+height: auto;
+position: relative;
+top: 1vw;
+left: -0.8vw;
+margin: 1vh;
+
+`;
+
+export const CheckboxStyled = styled.input`
+margin: 2vh;
+position: relative;
+left: -0.8vw;
 `;
 
 export const FixedHeaderStyled = styled.div`
@@ -80,6 +118,7 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 
+
 `;
 
 
@@ -91,6 +130,7 @@ top: 4vw;
 
 export const ImgStyled = styled.img`
 border: 5px solid #FF6F61;
+border-radius: 4px;
 
 `;
 
@@ -99,6 +139,16 @@ width: 22%;
 height: 60vh;
 border: 1px solid #fff;
 margin-bottom: 20px;
+border-radius: 4px;
+
+
+&:hover {
+  
+  box-shadow: rgb(255, 255, 255, 0.5) 0px 0px 5px 4px;
+  box-sizing: border-box;
+  
+}
+
 
 `;
 
@@ -107,11 +157,6 @@ margin-bottom: 20px;
 
 // ** Search folder
 
-export const SelectStyled = styled.select`
-width: auto;
-height: auto;
-
-`;
 
 export const FormStyled = styled.form`
 width: auto;
