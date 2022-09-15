@@ -77,22 +77,41 @@ export const ListMenuStyled = styled.div`
 color: white;
 margin: 3vw;
 
+
+
+text-align: center;
 `;
 
 export const SelectStyled = styled.select`
-width: 10vw;
-height: auto;
+width: 11vw;
+height: 4vh;
 position: relative;
 top: 1vw;
-left: -0.8vw;
+left: -1.5vw;
 margin: 1vh;
+
+@media (min-width: 300px) and (max-width: 575px) {
+  width: 40vw;
+  height: 3vh;
+    }
 
 `;
 
 export const CheckboxStyled = styled.input`
 margin: 2vh;
 position: relative;
-left: -0.8vw;
+top: 5px;
+left: -2vw;
+height: 3vh;
+width: 2vw;
+
+@media (min-width: 300px) and (max-width: 575px) {
+  width: 6vw;
+  height: 2.5vh;
+  left: -3vw;
+  
+  
+    }
 `;
 
 export const FixedHeaderStyled = styled.div`
