@@ -132,11 +132,29 @@ left: -0.7vw;
 top: 4vh;
 width: 10vw;
 
+@media (min-width: 300px) and (max-width: 575px) {
+  width: 35vw;
+  left: -1vw;
+  
+  
+    }
 
 `;
 
+export const ExceptionStyled = styled.input`
+width: 9.5vw;
+height: 3vh;
+position: relative;
+top: 1vw;
+left: -1vw;
+margin: 1vh;
 
+@media (min-width: 300px) and (max-width: 575px) {
+  width: 40vw;
+  height: 3vh;
+    }
 
+`;
 // ** Result folder 
 
 export const ResultsAllStyled = styled.div`

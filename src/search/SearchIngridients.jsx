@@ -8,13 +8,9 @@ import { MainStyled } from "../App.styled.js";
 
 
 
-export const SearchIngredients = (props) => {
+export const SearchIngredients = ({recipes, setRecipes, allList, setAllList, loading, setLoading, img}) => {
 
     const [ingredient, setIngredient] = useState("")
-    const [recipes, setRecipes] = useState([])
-    const [allList, setAllList] = useState([])
-    const [loading, setLoading] = useState(false)
-
     const addIngredient = () => {
         if (ingredient.trim().length > 0) {
             setAllList([...allList, ingredient])
@@ -32,14 +28,13 @@ export const SearchIngredients = (props) => {
         console.log(response);
 
         setRecipes(response.data.hits)
-        setAllList([])
     };
 
     return (
         <MainStyled>
             <Form addIngredient={addIngredient} ingredient={ingredient} setIngredient={setIngredient} />
             <SendReq allList={allList} newData={newData} setAllList={setAllList} />
-            <Results loading={loading} recipes={recipes} allList={allList} img={props.img} />
+            <Results loading={loading} recipes={recipes} allList={allList} img={img} />
         </MainStyled>
     )
 };

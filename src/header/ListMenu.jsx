@@ -1,35 +1,51 @@
 import { useState } from "react"
-import {ListMenuStyled} from "../App.styled"
+import { ListMenuStyled, ButtonFormStyled } from "../App.styled"
 import { Choise } from "../filter/Choise"
-import { DIET, HEALTH, MEALTYPE, DISHTYPE, COOKINGTIME } from "../search/Constans"
-import { Checkbox } from "../filter/Checkbox"
-import { Range } from "../filter/Range"
+import { DIET, HEALTH } from "../search/Constans"
+import { ExceptionComponent } from "../filter/Exception"
+import axios from "axios";
 
-export const ListMenu = (props) =>{
+
+export const ListMenu = ({ setRecipes, allList, setLoading, }) => {
     const [diet, setDiet] = useState("")
     const [health, setHealth] = useState("")
-    const [mealType, setMealType] = useState("")
-    const [dishType, setDishType] = useState("")
-    const [cookingTime, setCookingTime] = useState("")
+    const [allException, setAllException] = useState([])
+    const [exception, setException] = useState("")
+
+
+    const ExIngredient = () => {
+        if (exception.trim().length > 0) {
+            setAllException([...allException, exception])
+            setException("")
+            setAllException([])
+
+        }
+
+        console.log(exception);
+    };
+
+
+    const filterData = async () => {
+        setLoading(true);
+        const response = await axios.get(
+            `https://api.edamam.com/api/recipes/v2?app_id=e108185e&app_key=d1dcd17d85be68f7fd80ca52338c111b&type=public&q=${allList.join(", ")}&${diet.length > 0 && "diet=" + diet}&${health.length > 0 && "health=" + health}&${allException.lenght > 0 && "exception=" + exception}`
+        );
+        setLoading(false);
+        console.log(response);
+
+        setRecipes(response.data.hits)
+
+    };
 
     return <ListMenuStyled>
-            <h3>FILTER</h3>
-            <Checkbox name="some filter" type="checkbox" />
-            <Checkbox name="some filter" type="checkbox"/>
-            <Checkbox name="some filter" type="checkbox"/>
-            <Checkbox name="some filter" type="checkbox"/>
-            <Choise name="diet" changeValue={setDiet}
-                aray={DIET} />
-            <Choise name="health" changeValue={setHealth}
-                aray={HEALTH} />
-            <Choise name="mealType" changeValue={setMealType}
-                aray={MEALTYPE} />
-            <Choise name="dishType" changeValue={setDishType}
-                aray={DISHTYPE} />
-            <Choise name="cookingTime" changeValue={setCookingTime}
-                aray={COOKINGTIME} />
-            <Range type="range" min="1" max="100"/>
 
-     </ListMenuStyled>
-    
+        <ButtonFormStyled type="button" onClick={() => { filterData(); ExIngredient() }} >FILTER</ButtonFormStyled>
+        <Choise name="diet" changeValue={setDiet}
+            aray={DIET} />
+        <Choise name="health" changeValue={setHealth}
+            aray={HEALTH} />
+        <ExceptionComponent setException={setException} exception={exception} />
+
+    </ListMenuStyled>
+
 }

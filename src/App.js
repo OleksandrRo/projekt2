@@ -8,26 +8,33 @@ import { SearchIngredients } from './search/SearchIngridients';
 
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [recipes, setRecipes] = useState([])
+    const [allList, setAllList] = useState([])
+    const [loading, setLoading] = useState(false)
+
   const openMenu = () => {
 
     setIsVisible(!isVisible);
+    
   };
 
 
   const closeMenu = (e) => {
 
-    if (e.pageX < window.innerWidth - 200)
-      setIsVisible(false)
+    if (e.pageX < window.innerWidth - 230)
+     setIsVisible(false)
     console.log(e.pageX)
+    
+    console.log(window.screen.width)
 
   }
 
   return (
     <div onClick={closeMenu}>
       <AppContainer >
-      <Header isVisible={isVisible} openMenu={openMenu} />
+      <Header isVisible={isVisible} openMenu={openMenu} recipes={recipes} allList={allList} loading={loading} setAllList={setAllList} setRecipes={setRecipes} setLoading={setLoading}/>
       </AppContainer>
-      <SearchIngredients img={loader} />
+      <SearchIngredients img={loader} recipes={recipes} allList={allList} loading={loading} setAllList={setAllList} setRecipes={setRecipes} setLoading={setLoading} />
     </div>
   );
 };
